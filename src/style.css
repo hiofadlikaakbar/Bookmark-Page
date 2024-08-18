@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply m-0;
+  @apply p-0;
+  @apply overflow-x-hidden;
+}
+.hero::after {
+  @apply bg-softBlue;
+  border-radius: 50% 0 0 50%;
+  content: "";
+  position: absolute;
+  top: 140px;
+  right: 0;
+  height: 31%;
+  width: 75%;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 1024px) {
+  .hero::after {
+    @apply bg-softBlue;
+    border-radius: 45% 0 0 35%;
+    content: "";
+    position: absolute;
+    top: 280px;
+    right: 0;
+    height: 42%;
+    width: 35%;
+    z-index: -1;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .hero::after {
+    @apply bg-softBlue;
+    border-radius: 45% 0 0 35%;
+    content: "";
+    position: absolute;
+    top: 300px;
+    right: 0;
+    height: 50%;
+    width: 35%;
+    z-index: -1;
+  }
+}
+
+.strip-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @apply border-b border-b-grayishBlue;
+}
+
+.feature::after {
+  @apply bg-softBlue;
+  border-radius: 0 50% 50% 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 52%;
+  width: 75%;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 768px) {
+  .feature::after {
+    @apply bg-softBlue;
+    border-radius: 0 50% 50% 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 64%;
+    width: 75%;
+    z-index: -1;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .feature::after {
+    @apply bg-softBlue;
+    border-radius: 0 45% 35% 0;
+    content: "";
+    position: absolute;
+    top: 70px;
+    left: 0;
+    height: 90%;
+    width: 35%;
+    z-index: -1;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .feature::after {
+    @apply bg-softBlue;
+    border-radius: 0 45% 35% 0;
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 102%;
+    width: 40%;
+    z-index: -1;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-softBlue;
+  @apply rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-softRed;
+}
