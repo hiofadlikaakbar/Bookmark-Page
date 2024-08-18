@@ -7,11 +7,11 @@
       <div class="flex-col md:flex-row flex items-center gap-10 lg:gap-16">
         <img
           :src="details.src"
-          :alt="details.logo"
+          :alt="details.alt"
           class="mb-8 md:mb-0 scale-100"
         />
         <ul class="text-center flex flex-col md:flex-row gap-5 lg:gap-10">
-          <li v-for="(link, index) in details.links" :key="index" class="">
+          <li v-for="(link, index) in details.links" :key="index">
             <a
               :href="link.href"
               class="text-gray-100 hover:text-softRed duration-200 ease-in-out text-base"
@@ -25,12 +25,12 @@
         <div
           class="hover:-translate-y-1 duration-200 ease-in-out cursor-pointer"
         >
-          <img :src="details.fb" alt="facebook" class="" />
+          <img :src="details.fb" alt="facebook" />
         </div>
         <div
           class="hover:-translate-y-1 duration-200 ease-in-out cursor-pointer"
         >
-          <img :src="details.twt" alt="tweeter" class="" />
+          <img :src="details.twt" alt="tweeter" />
         </div>
       </div>
     </div>

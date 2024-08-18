@@ -1,6 +1,6 @@
 <template>
   <header class="pb-36">
-    <nav id="navbar" class="p-5 bg-white/80 xl:px-16 w-full fixed z-50">
+    <nav id="navbar" class="p-6 bg-white/80 xl:px-16 w-full fixed z-50">
       <div class="flex justify-between mx-auto items-center">
         <div class="flex items-center gap-5">
           <img
@@ -17,18 +17,24 @@
         <ul class="hidden lg:flex gap-10 items-center">
           <li v-for="(link, index) in links" :key="index">
             <a
-              :href="link.label"
+              :href="link.href"
               class="text-vdBlue focus:outline-none hover:text-softRed duration-200 ease-in-out"
               >{{ link.label }}</a
             >
           </li>
-          <button
-            class="py-2 rounded px-7 bg-softRed focus:outline-none hover:text-softRed border-softRed border hover:bg-white duration-300 ease-in-out text-white"
-          >
-            LOGIN
-          </button>
+          <li>
+            <a
+              href="#"
+              class="py-2 rounded px-7 bg-softRed focus:outline-none hover:text-softRed border-softRed border hover:bg-white duration-300 ease-in-out text-white"
+              >LOGIN</a
+            >
+          </li>
         </ul>
-        <button @click="toggleNav" class="block lg:hidden focus:outline-none">
+        <button
+          @click="toggleNav"
+          class="block lg:hidden focus:outline-none"
+          aria-label="Toggle navigation menu"
+        >
           <img
             :src="burgerMenu"
             alt="burger"
@@ -53,14 +59,16 @@
               >{{ link.label }}</a
             >
           </li>
-          <button
-            class="uppercase text-white focus:outline-none font-semibold border-2 px-4 py-3 rounded text-lg tracking-widest border-white"
-          >
-            login
-          </button>
-          <div class="flex gap-8 justify-center pt-64 items-center">
-            <img :src="fb" alt="facebook" />
-            <img :src="tweet" alt="tweeter" />
+          <li class="pt-8">
+            <a
+              href="#"
+              class="uppercase text-white focus:outline-none font-semibold border-2 px-4 py-3 rounded text-lg tracking-widest border-white"
+              >LOGIN</a
+            >
+          </li>
+          <div class="flex gap-8 justify-center pt-24 xs:pt-64 items-center">
+            <img :src="fb" alt="Facebook" />
+            <img :src="tweet" alt="Twitter" />
           </div>
         </ul>
       </div>
@@ -85,17 +93,13 @@ const isWhiteLogoVisible = ref(false);
 const toggleNav = () => {
   showMenu.value = !showMenu.value;
   isWhiteLogoVisible.value = !isWhiteLogoVisible.value;
-  if (isWhiteLogoVisible.value) {
-    burger.value.src = closeMenu;
-  } else {
-    burger.value.src = burgerMenu;
-  }
+  burger.value.src = isWhiteLogoVisible.value ? closeMenu : burgerMenu;
 };
 
 const links = [
-  { label: "FEATURES", href: "#" },
-  { label: "PRICING", href: "#" },
-  { label: "CONTACT", href: "#" },
+  { label: "FEATURES", href: "#features" },
+  { label: "PRICING", href: "#pricing" },
+  { label: "CONTACT", href: "#contact" },
 ];
 
 onMounted(() => {

@@ -1,21 +1,21 @@
 <template>
   <Header />
-  <section role="region">
+  <section>
     <Hero :details="heroAssets" />
   </section>
-  <section role="region">
+  <section>
     <Features :details="featureAssets" />
   </section>
-  <section role="region">
+  <section>
     <Extension :details="extensionAssets" />
   </section>
-  <section role="region">
+  <section>
     <Faq :details="faqPage"></Faq>
   </section>
-  <section role="region" class="bg-softBlue">
+  <section class="bg-softBlue">
     <Contact :details="contactDetails" />
   </section>
-  <footer role="contentinfo" class="bg-vdBlue">
+  <footer class="bg-vdBlue">
     <Footer :details="footerDetails" />
   </footer>
 </template>
